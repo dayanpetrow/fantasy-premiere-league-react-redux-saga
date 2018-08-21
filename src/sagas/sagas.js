@@ -29,9 +29,5 @@ function fetchDataOnLoad() {
  return axios({
     method: "GET",
     url: "https://fantasy.premierleague.com/drf/element-summary/5",
-    headers: {
-      "Origin": "http://localhost:3000",
-      "Access-Control-Request-Method": "GET"
-    }
   })
 }

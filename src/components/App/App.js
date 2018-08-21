@@ -5,17 +5,16 @@ import "./App.css";
 import { connect } from "react-redux";
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchData()
+  }
+
   render() {
-    const { fetching, response, error, fetchData } = this.props;
+    const { fetching, error } = this.props;
     
     return (
       <div className="App">
-
-        {fetching ? (
-          <button disabled>Fetching...</button>
-        ) : (
-          <button onClick={fetchData}>Request</button>
-        )}
 
         {error && <p style={{ color: "red" }}>damn it epl</p>}
 
