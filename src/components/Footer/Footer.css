@@ -1,0 +1,9 @@
+.Footer {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right, #6859ae , #d8b3dc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

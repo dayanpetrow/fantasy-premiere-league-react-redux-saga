@@ -1,40 +1,25 @@
 import React, { Component } from "react";
-import { INIT_API_REQUEST } from "../../actions/actions"
+import { Route, Switch } from 'react-router-dom';
 import "./App.css";
+import Navigation from "../Nav/Navigation";
+import HomePage from "../HomePage/HomePage"
+import PlayersPage from "../PlayersPage/PlayersPage"
+import Footer from "../Footer/Footer"
 
-import { connect } from "react-redux";
 
-class App extends Component {
-
-  componentDidMount() {
-    this.props.fetchData()
-  }
-
+export default class App extends Component {
   render() {
-    const { fetching, error } = this.props;
-    
     return (
       <div className="App">
-
-        {error && <p style={{ color: "red" }}>damn it epl</p>}
-
+        <Navigation />
+        <div className="Content">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/players" component={PlayersPage} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    fetching: state.fetching,
-    response: state.response,
-    error: state.error
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchData: () => dispatch({ type: INIT_API_REQUEST })
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
