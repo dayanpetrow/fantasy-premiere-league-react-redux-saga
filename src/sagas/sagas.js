@@ -8,6 +8,9 @@ export function* rootSaga() {
   yield takeLatest(INIT_API_REQUEST, workerFetchDataOnLoad);
 }
 
+const PROXY_URL = "http://localhost:8080/"
+const FPL_BOOTSTRAP_STATIC_URL = "https://fantasy.premierleague.com/drf/bootstrap-static"
+
 // worker saga: makes the api call when watcher saga sees the action
 function* workerFetchDataOnLoad() {
   try {
@@ -28,6 +31,6 @@ function* workerFetchDataOnLoad() {
 function fetchDataOnLoad() {
  return axios({
     method: "GET",
-    url: "https://fantasy.premierleague.com/drf/element-summary/5",
+    url: `${PROXY_URL}${FPL_BOOTSTRAP_STATIC_URL}`
   })
 }
