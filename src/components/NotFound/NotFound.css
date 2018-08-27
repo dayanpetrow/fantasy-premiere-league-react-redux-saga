@@ -1,0 +1,14 @@
+.not-found {
+    text-align: center;
+    color: white;
+}
+
+.not-found > h1 {
+    font-size: 12vw;
+}
+
+.not-found > h3 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}

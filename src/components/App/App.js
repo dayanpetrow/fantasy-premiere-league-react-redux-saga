@@ -5,6 +5,7 @@ import Navigation from "../Nav/Navigation";
 import HomePage from "../HomePage/HomePage"
 import PlayersPage from "../PlayersPage/PlayersPage"
 import Footer from "../Footer/Footer"
+import NotFound from "../NotFound/NotFound"
 
 
 export default class App extends Component {
@@ -16,6 +17,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/players" component={PlayersPage} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
         <Footer />

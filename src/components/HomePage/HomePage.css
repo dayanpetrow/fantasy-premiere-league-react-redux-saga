@@ -31,3 +31,8 @@
 .content {
     padding: 20px;
 }
+
+.home-page__icon {
+    transform: translateY(3px);
+    margin-right: 15px;
+}

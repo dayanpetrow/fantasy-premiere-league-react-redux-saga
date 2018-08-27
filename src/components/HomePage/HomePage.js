@@ -3,49 +3,47 @@ import "./HomePage.css";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
-import DreamTeam from "../DreamTeam/DreamTeam"
+import DreamTeam from "../DreamTeam/DreamTeam";
+import NextFixtures from "../NextFixtures/NextFixtures";
+import { Icon } from "react-icons-kit";
+import { starFull } from "react-icons-kit/icomoon/starFull";
+import { calendar } from "react-icons-kit/fa/calendar";
+import Loader from '../Loader/Loader'
 
 class HomePage extends Component {
   componentDidMount() {
     this.props.changeView();
   }
   render() {
-    console.log(this.props.response);
-    if(!this.props.response) { 
-      return <div>no data yet</div>
+    if (!this.props.response) {
+      return <Loader />
     }
-    
-    console.log(
-      this.props.response.elements.filter(element => element.in_dreamteam === true)
-    )
-
-    const { teams , next_event_fixtures, elements } = this.props.response;
+    const { teams, next_event_fixtures, elements, element_types } = this.props.response;
     return (
       <div className="Home">
         <div className="column">
-          <div className="block"> 
+          <div className="block">
             <div className="block-header">
-              <h3 className="block-header__title">Dream Team</h3>
+              <h3 className="block-header__title">
+                <Icon size={"24px"} icon={starFull} className="home-page__icon" />
+                Dream Team
+              </h3>
             </div>
             <div className="content">
-              <DreamTeam players={elements} />
+              <DreamTeam players={elements} positions={element_types} teams={teams} />
             </div>
           </div>
         </div>
         <div className="column">
-          <div className="block"> 
+          <div className="block">
             <div className="block-header">
-              <h3 className="block-header__title">Next Fixtures</h3>
+              <h3 className="block-header__title">
+                <Icon size={"24px"} icon={calendar} className="home-page__icon" />
+                Next Fixtures
+              </h3>
             </div>
             <div className="content">
-              {next_event_fixtures.map(fixture => {
-                let team_a = teams[fixture.team_a-1].name
-                let team_h = teams[fixture.team_h-1].name
-                let key = `${team_a}${team_h}`
-                return (
-                  <div key={key}>{`${fixture.kickoff_time_formatted} ${team_a} ${team_h}`}</div>
-                );
-              })}
+              <NextFixtures fixtures={next_event_fixtures} teams={teams} />
             </div>
           </div>
         </div>
@@ -53,8 +51,6 @@ class HomePage extends Component {
     );
   }
 }
-
-
 
 const mapStateToProps = state => {
   return {

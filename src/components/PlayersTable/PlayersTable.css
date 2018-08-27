@@ -1,8 +1,8 @@
-.dt-row:nth-child(even) {
+.player-row:nth-child(even) {
     background-color: #373a4e;
 }
 
-.dt-row {
+.player-row {
     text-align: center;
     color: white;
     display: flex;
@@ -10,40 +10,26 @@
     padding: 10px 0px;
 }
 
-.dt-row:hover {
+.player-row:hover {
     background-color: #474b64;
 }
 
-.dt-row__team {
+.player-row__team {
     font-size: 12px;
 }
 
-.dt-row__full-name{
+.player-row__full-name{
     text-align: center;
-    flex: 0 0 50%;
+    flex: 0 0 30%;
 }
 
-.dt-row__points{
+.player-row__stats {
     text-align: center;
-    flex: 0 0 10%;
+    flex: 0 0 7%;
 }
 
-.dt-row__ppg{
-    text-align: center;
-    flex: 0 0 10%;
-}
 
-.dt-row__minutes{
-    text-align: center;
-    flex: 0 0 10%;
-}
-
-.dt-row__position{
-    text-align: center;
-    flex: 0 0 10%;
-}
-
-.dt-row-head {
+.player-row-head {
     text-align: center;
     color: white;
     padding: 15px 0px !important;
@@ -55,4 +41,23 @@
     font-weight: bold;
     font-size: 14px;
     letter-spacing: 1px;
+}
+
+.player-row__button {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.player-info-button {
+    text-decoration: none;
+    background-color: #2196f3;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+    font-size: 12px;
+}
+
+.player-fullname-link {
+    text-decoration: none;
+    color: white;
 }
