@@ -6,7 +6,8 @@ import * as actions from "../../actions/actions";
 import { Icon } from 'react-icons-kit'
 import {home} from 'react-icons-kit/icomoon/home'
 import {addressBook} from 'react-icons-kit/icomoon/addressBook'
-import * as urls from '../../constants/urls'
+import {list} from 'react-icons-kit/fa/list'
+//import * as urls from '../../constants/urls'
 
 class Navigation extends Component {
   componentDidMount() {
@@ -14,9 +15,6 @@ class Navigation extends Component {
   }
 
   render() {
-    const currentView = this.props.view
-    console.log(currentView)
-
     return (
       <div className="Navbar">
         <div className="navigation">
@@ -27,6 +25,10 @@ class Navigation extends Component {
 
          <NavLink to={"/players"} activeClassName='active' className="navbar-link" key={"players"} >
             <Icon size={'18px'} icon={addressBook} /> Players
+          </NavLink>
+
+          <NavLink to={"/teams"} activeClassName='active' className="navbar-link" key={"teams"} >
+            <Icon size={'18px'} icon={list} /> Teams
           </NavLink>
 
         </div>

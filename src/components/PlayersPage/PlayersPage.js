@@ -162,7 +162,7 @@ class PlayersPage extends Component {
           positions={positions}
           results_count={results_count}
         />
-        <div class="loadmore">
+        <div className="loadmore">
           <button
             onClick={this.loadMorePlayers}
             disabled={players.length <= results_count ? true : false}

@@ -32,6 +32,7 @@ export default function PlayersTable({ data, positions, teams, results_count }) 
               />
             );
           })}
+          
         </div>
       </div>
     </div>

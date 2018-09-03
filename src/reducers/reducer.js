@@ -1,12 +1,13 @@
 import * as actions from "../actions/actions";
-import {HOME_PAGE} from '../constants/urls'
 
 // reducer with initial state
 const initialState = {
   fetching: false,
   response: null,
   error: null,
-  view: HOME_PAGE
+  view: null,
+  fetching_player: false,
+  player: null,
 };
 
 export function reducer(state = initialState, action) {
@@ -35,6 +36,25 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         view: action.activeView
+      };
+    case actions.FETCH_PLAYER:
+      return {
+        ...state,
+        fetching_player: true,
+        error: null
+      };
+    case actions.FETCH_PLAYER_SUCCESS:
+      return {
+        ...state,
+        fetching_player: false,
+        player: action.response.data
+      };
+    case actions.FETCH_PLAYER_FAILURE:
+      return {
+        ...state,
+        fetching_player: false,
+        player: null,
+        error: action.error
       };
     default:
       return state;

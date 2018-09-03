@@ -6,6 +6,9 @@ import HomePage from "../HomePage/HomePage"
 import PlayersPage from "../PlayersPage/PlayersPage"
 import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound"
+import PlayerPageSingle from "../PlayerPageSingle/PlayerPageSingle";
+import TeamsPage from "../TeamsPage/TeamsPage";
+import TeamPageSingle from "../TeamPageSingle/TeamPageSingle";
 
 
 export default class App extends Component {
@@ -17,6 +20,9 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/players" component={PlayersPage} />
+            <Route exact path="/players/:playerId" component={PlayerPageSingle} />
+            <Route exact path="/teams" component={TeamsPage} />
+            <Route exact path="/teams/:teamId" component={TeamPageSingle} />
             <Route path="*" component={NotFound} />
           </Switch>
         </div>
