@@ -56,6 +56,11 @@ export function reducer(state = initialState, action) {
         player: null,
         error: action.error
       };
+    case action.CLEAR_FETCHED_PLAYER:
+      return {
+        ...state,
+        player: null
+      }
     default:
       return state;
   }

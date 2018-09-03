@@ -2,14 +2,13 @@ import React from "react";
 import "./DifficultyLine.css";
 import { UncontrolledTooltip } from "reactstrap";
 
-export default function DifficultyLine({ data, toggle, isOpen }) {
+export default function DifficultyLine({ data }) {
   return (
     <div className="difficulty-line">
       {data.fixtures.map(fixture => {
         return (
-          <div>
+          <div key={fixture.id}>
             <div
-              key={fixture.id}
               id={`fixture-box-${fixture.id}`}
               className={`fixture-box difficulty-${fixture.difficulty}`}
             />

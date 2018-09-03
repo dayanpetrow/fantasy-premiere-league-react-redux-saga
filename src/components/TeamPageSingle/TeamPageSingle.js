@@ -30,6 +30,7 @@ class TeamPageSingle extends Component {
 
   componentWillUnmount() {
     this.setState({ fixtures_loaded: false });
+    this.props.clearFetchedPlayer();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -79,6 +80,7 @@ class TeamPageSingle extends Component {
             {this.state.fixtures_loaded && this.props.player_to_get_fixtures ? (
               <TeamPageSingleFixtures
                 data={this.props.player_to_get_fixtures}
+                teams={this.props.all_data.teams}
               />
             ) : (
               <Loader />
@@ -120,6 +122,10 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: actions.CHANGE_ACTIVE_VIEW,
         activeView: urls.TEAM_PAGE_SINGLE
+      }),
+    clearFetchedPlayer: () =>
+      dispatch({
+        type: actions.CLEAR_FETCHED_PLAYER
       })
   };
 };
