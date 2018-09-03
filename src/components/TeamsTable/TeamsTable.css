@@ -1,0 +1,99 @@
+.teams-row:nth-child(even) {
+    background-color: #373a4e;
+}
+
+.teams-row {
+    text-align: center;
+    color: white;
+    display: flex;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.teams-row:hover {
+    background-color: #474b64;
+}
+
+.teams-row:hover span[class^="team-strength-"] {
+    opacity: 1;
+}
+
+.teams-row__name {
+    flex: 0 0 25%;
+}
+
+.teams-row__fixture{
+    text-align: center;
+    flex: 0 0 20%;
+}
+
+.teams-row__strength {
+    text-align: center;
+    flex: 0 0 7%;
+}
+
+
+.teams-row-head {
+    text-align: center;
+    color: white;
+    padding: 15px 0px !important;
+    margin: 10px 0px;
+    display: flex;
+    width: 100%;
+    background-color: #414358;
+    padding: 5px 0px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.teams-row__button {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.teams-info-button {
+    text-decoration: none;
+    background-color: #2196f3;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+    font-size: 12px;
+}
+
+.teams-link {
+    text-decoration: none;
+    color: white;
+}
+
+.teams-row__stats {
+    text-align: center;
+    flex: 0 0 14%;
+}
+
+span[class^="team-strength-"] {
+    opacity: 0.6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+.team-strength-1 {
+    background-color: #94ff32;
+}
+
+.team-strength-2 {
+    background-color: #94ff32;
+}
+
+.team-strength-3 {
+    background-color: #fbfd02;
+}
+
+.team-strength-4 {
+    background-color: #f36b00;
+}
+
+.team-strength-5 {
+    background-color: #d60000;
+}

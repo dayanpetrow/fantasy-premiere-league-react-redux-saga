@@ -10,3 +10,7 @@ html, body {
   margin: 0px auto;
   padding: 30px 10px;
 }
+
+.no-padding {
+  padding: 0 0 0 0;
+}

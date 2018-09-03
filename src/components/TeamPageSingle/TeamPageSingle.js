@@ -3,11 +3,40 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
 import Loader from "../Loader/Loader";
-//import "./NotFound.css";
+import "./TeamPageSingle.css";
+import TeamPageSinglePlayers from "../TeamPageSinglePlayers/TeamPageSinglePlayers";
+import TeamPageSingleFixtures from "../TeamPageSingleFixtures/TeamPageSingleFixtures";
+import DifficultyLine from "../DifficultyLine/DifficultyLine";
 
 class TeamPageSingle extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      fixtures_loaded: false,
+      tooltipOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      tooltipOpen: !this.state.tooltipOpen
+    });
+  }
+
   componentDidMount() {
     this.props.changeView();
+  }
+
+  componentWillUnmount() {
+    this.setState({ fixtures_loaded: false });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.state.fixtures_loaded && this.props.team_players) {
+      this.props.fetchPlayer(this.props.team_players[0].id);
+      this.setState({ fixtures_loaded: true });
+    }
   }
 
   render() {
@@ -16,11 +45,46 @@ class TeamPageSingle extends Component {
     }
 
     return (
-      <div className="not-found">
-        <h3>
-          {this.props.team.name}{" "}
-        </h3>
-        <h1>{this.props.match.params.teamId}</h1>
+      <div className="TeamPageSingle">
+        <h1 className="team-name-title">
+          {this.props.team.name} ({this.props.team.short_name})
+        </h1>
+        <div className="difficulty-colored-line">
+          {this.state.fixtures_loaded && this.props.player_to_get_fixtures ? (
+            <DifficultyLine
+              data={this.props.player_to_get_fixtures}
+              isOpen={this.state.tooltipOpen}
+              toggle={this.state.toggle}
+            />
+          ) : (
+            <Loader />
+          )}
+        </div>
+        <div className="team-page-content">
+          <div className="column column-left">
+            {this.props.all_data.element_types.map(position => {
+              let players = this.props.team_players.filter(
+                player => player.element_type === position.id
+              );
+              return (
+                <TeamPageSinglePlayers
+                  key={position.plural_name}
+                  players={players}
+                  position={position.plural_name}
+                />
+              );
+            })}
+          </div>
+          <div className="column column-right">
+            {this.state.fixtures_loaded && this.props.player_to_get_fixtures ? (
+              <TeamPageSingleFixtures
+                data={this.props.player_to_get_fixtures}
+              />
+            ) : (
+              <Loader />
+            )}
+          </div>
+        </div>
       </div>
     );
   }
@@ -31,11 +95,12 @@ const mapStateToProps = (state, ownProps) => {
     all_data: state.response,
     error: state.error,
     view: state.view,
+    player_to_get_fixtures: state.player,
     team_players: state.response
-    ? state.response.elements.filter(
-        player => `${player.team}` === ownProps.match.params.teamId
-      )
-    : null,
+      ? state.response.elements.filter(
+          player => `${player.team}` === ownProps.match.params.teamId
+        )
+      : null,
     team: state.response
       ? state.response.teams.find(
           team => `${team.id}` === ownProps.match.params.teamId

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
 import Loader from "../Loader/Loader";
+import TeamsTable from "../TeamsTable/TeamsTable"
 //import "./NotFound.css";
 
 class TeamsPage extends Component {
@@ -15,13 +16,11 @@ class TeamsPage extends Component {
       return <Loader />;
     }
 
+    const { teams } = this.props
+    console.log(teams)
+
     return (
-      <div className="not-found">
-        <h3>
-         what
-        </h3>
-        <h1>what</h1>
-      </div>
+      <TeamsTable teams={teams} />
     );
   }
 }

@@ -1,0 +1,36 @@
+.difficulty-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fixture-box {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #2b2d3c;
+}
+
+.difficulty-1 {
+    background-color: #94ff32;
+}
+
+.difficulty-2 {
+    background-color: #94ff32;
+}
+.difficulty-3 {
+    background-color: #fbfd02;
+}
+
+.difficulty-4 {
+    background-color: #f36b00;
+}
+
+.difficulty-5 {
+    background-color: #d60000;
+}
+
+.white-tooltip {
+    padding: 10px;
+    background-color: white;
+    margin: 20px;
+}
