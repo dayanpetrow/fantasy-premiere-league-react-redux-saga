@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./TeamPageSinglePlayers.css";
+import { getPriceChangeArrow } from '../ConditionalJSX'
 
 export default function TeamPageSinglePlayers({ players, position }) {
   return (
@@ -26,6 +27,7 @@ export default function TeamPageSinglePlayers({ players, position }) {
             let price = (player.now_cost * 0.1).toFixed(1);
             let key = `${full_name}${minutes}${price}`;
             let player_id = player.id;
+            let price_change = player.cost_change_start
             return (
               <div key={key} className="player-row">
                 <div className="player-row__full-name">
@@ -36,7 +38,7 @@ export default function TeamPageSinglePlayers({ players, position }) {
                     {full_name}
                   </Link>{" "}
                 </div>
-                <div className="player-row__stats-team-page">{price}m </div>
+                <div className="player-row__stats-team-page">{price}m {getPriceChangeArrow(price_change, player_id)}</div>
                 <div className="player-row__stats-team-page">{points} </div>
                 <div className="player-row__stats-team-page">{form} </div>
                 <div className="player-row__stats-team-page">{minutes} </div>

@@ -72,28 +72,28 @@
 }
 
 span[class^="team-strength-"] {
-    opacity: 0.6;
+    opacity: 1;
     padding: 5px 10px;
     border-radius: 5px;
-    color: black;
+    color: white;
 }
 
 .team-strength-1 {
-    background-color: #94ff32;
+    background-color: rgba(148,255,50, 0.8);
 }
 
 .team-strength-2 {
-    background-color: #94ff32;
+    background-color: rgba(110,187,37,0.8);
 }
 
 .team-strength-3 {
-    background-color: #fbfd02;
+    background-color: rgba(180,148,6,0.8);
 }
 
 .team-strength-4 {
-    background-color: #f36b00;
+    background-color: rgba(199,63,0,0.8);
 }
 
 .team-strength-5 {
-    background-color: #d60000;
+    background-color: rgba(214,0,0,0.8);
 }
