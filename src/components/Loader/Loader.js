@@ -19,9 +19,11 @@ export default function Loader() {
   );
 }
 
-/*
-<div classNameName="loader">
-  <Icon size={"64px"} icon={spinner10} classNameName="loader__icon" />
-  <h1 classNameName="loader__text">Loading...</h1>
-</div>
-*/
+export function spinnerLoader() {
+  return (
+    <div classNameName="loader">
+      <Icon size={"64px"} icon={spinner10} classNameName="loader__icon" />
+      <h1 classNameName="loader__text">Loading...</h1>
+    </div>
+  );
+}

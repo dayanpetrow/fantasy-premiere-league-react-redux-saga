@@ -48,3 +48,17 @@ export function getPriceChangeArrow(cost_change_start, player_id) {
     );
   }
 }
+
+/* returns a class name depending on whether the game finished
+** in a draw, loss or win */
+export function getResultOutcomeClass(team_a_score, team_h_score, isHome) {
+  if (team_a_score === team_h_score) {
+    return "draw";
+  } else if (isHome && team_h_score > team_a_score) {
+    return "win";
+  } else if (!isHome && team_h_score < team_a_score) {
+    return "win";
+  } else {
+    return "loss";
+  }
+}

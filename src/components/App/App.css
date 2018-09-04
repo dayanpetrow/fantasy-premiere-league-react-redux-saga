@@ -22,3 +22,9 @@ html, body {
 .price-red-arrow {
   color: #d60000;
 }
+
+.data-not-found {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
