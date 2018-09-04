@@ -12,22 +12,14 @@ import DifficultyLine from "../DifficultyLine/DifficultyLine";
 const myobj = {
   fixtures: [],
   history: []
-}
+};
 
 class TeamPageSingle extends Component {
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      fixtures_loaded: false,
-      tooltipOpen: false
+      fixtures_loaded: false
     };
-  }
-
-  toggle() {
-    this.setState({
-      tooltipOpen: !this.state.tooltipOpen
-    });
   }
 
   componentDidMount() {
@@ -51,26 +43,29 @@ class TeamPageSingle extends Component {
       return <Loader />;
     }
 
+    const {
+      element_types: player_positions,
+      teams: all_teams
+    } = this.props.all_data;
+    const { team_players, team, player_to_get_fixtures } = this.props;
+    const { fixtures_loaded } = this.state;
+
     return (
       <div className="TeamPageSingle">
         <h1 className="team-name-title">
-          {this.props.team.name} ({this.props.team.short_name})
+          {team.name} ({team.short_name})
         </h1>
         <div className="difficulty-colored-line">
-          {this.state.fixtures_loaded && this.props.player_to_get_fixtures ? (
-            <DifficultyLine
-              data={this.props.player_to_get_fixtures}
-              isOpen={this.state.tooltipOpen}
-              toggle={this.state.toggle}
-            />
+          {fixtures_loaded && player_to_get_fixtures ? (
+            <DifficultyLine data={player_to_get_fixtures} />
           ) : (
             <Loader />
           )}
         </div>
         <div className="team-page-content">
           <div className="column column-left">
-            {this.props.all_data.element_types.map(position => {
-              let players = this.props.team_players.filter(
+            {player_positions.map(position => {
+              let players = team_players.filter(
                 player => player.element_type === position.id
               );
               return (
@@ -83,10 +78,10 @@ class TeamPageSingle extends Component {
             })}
           </div>
           <div className="column column-right">
-            {this.state.fixtures_loaded && this.props.player_to_get_fixtures ? (
+            {fixtures_loaded && player_to_get_fixtures ? (
               <TeamPageSingleFixtures
-                data={this.props.player_to_get_fixtures}
-                teams={this.props.all_data.teams}
+                data={player_to_get_fixtures}
+                teams={all_teams}
               />
             ) : (
               <Loader />

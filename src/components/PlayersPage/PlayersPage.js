@@ -121,8 +121,8 @@ class PlayersPage extends Component {
         return { label: option.plural_name, value: option.id };
       });
 
-      position_options = [{ label: "All", value: 5 }, ...position_options]
-      sort_options = [{ label: "Options", value: null }, ...sort_options]
+      position_options = [{ label: "All", value: 5 }, ...position_options];
+      sort_options = [{ label: "Options", value: null }, ...sort_options];
 
       return {
         players: nextProps.response.elements.sort(

@@ -1,18 +1,16 @@
-import { takeLatest, call, put, all } from "redux-saga/effects"
-import axios from "axios"
-import * as actions from "../actions/actions"
+import { takeLatest, call, put, all } from "redux-saga/effects";
+import axios from "axios";
+import * as actions from "../actions/actions";
 
 //constants
-const PROXY_URL = "http://localhost:8080/"
-const FPL_BOOTSTRAP_STATIC_URL = "https://fantasy.premierleague.com/drf/bootstrap-static"
-const FPL_PLAYER_URL = "https://fantasy.premierleague.com/drf/element-summary/"
+const PROXY_URL = "http://localhost:8080/";
+const FPL_BOOTSTRAP_STATIC_URL =
+  "https://fantasy.premierleague.com/drf/bootstrap-static";
+const FPL_PLAYER_URL = "https://fantasy.premierleague.com/drf/element-summary/";
 
 //rootSaga with all watchers
 export function* rootSaga() {
-  yield all([
-    watchFetchDataOnLoad(),
-    watchFetchPlayer(),
-  ])
+  yield all([watchFetchDataOnLoad(), watchFetchPlayer()]);
 }
 
 // watcher saga for initial request action
@@ -30,7 +28,6 @@ function* workerFetchDataOnLoad() {
   try {
     const response = yield call(fetchDataOnLoad);
     yield put({ type: actions.INIT_API_REQUEST_SUCCESS, response });
-  
   } catch (error) {
     yield put({ type: actions.INIT_API_REQUEST_FAILURE, error });
   }
@@ -41,7 +38,6 @@ function* workerFetchPlayer(action) {
   try {
     const response = yield call(fetchPlayer, action.playerId);
     yield put({ type: actions.FETCH_PLAYER_SUCCESS, response });
-  
   } catch (error) {
     yield put({ type: actions.FETCH_PLAYER_FAILURE, error });
   }
@@ -49,16 +45,16 @@ function* workerFetchPlayer(action) {
 
 // fetch request: get initial data
 function fetchDataOnLoad() {
- return axios({
+  return axios({
     method: "GET",
     url: `${PROXY_URL}${FPL_BOOTSTRAP_STATIC_URL}`
-  })
+  });
 }
 
 // fetch request: get player data given id
 function fetchPlayer(playerId) {
   return axios({
-     method: "GET",
-     url: `${PROXY_URL}${FPL_PLAYER_URL}${playerId}`
-   })
- }
+    method: "GET",
+    url: `${PROXY_URL}${FPL_PLAYER_URL}${playerId}`
+  });
+}

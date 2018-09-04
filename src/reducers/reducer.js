@@ -7,7 +7,7 @@ const initialState = {
   error: null,
   view: null,
   fetching_player: false,
-  player: null,
+  player: null
 };
 
 export function reducer(state = initialState, action) {
@@ -60,7 +60,7 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         player: null
-      }
+      };
     default:
       return state;
   }

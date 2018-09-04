@@ -1,11 +1,9 @@
 import React from "react";
 import "./TeamPageSingleFixtures.css";
 import { Link } from "react-router-dom";
-import { getResultOutcomeClass } from '../ConditionalJSX'
-
+import { getResultOutcomeClass } from "../ConditionalJSX";
 
 export default function TeamPageSingleFixtures({ data, teams }) {
-  console.log(data);
   return (
     <div>
       <div className="block">
@@ -13,7 +11,9 @@ export default function TeamPageSingleFixtures({ data, teams }) {
           <h3 className="block-header__title">Season Results</h3>
         </div>
         <div className="content">
-          {data.history.length === 0 && <div className="data-not-found">The season has not started!</div>}
+          {data.history.length === 0 && (
+            <div className="data-not-found">The season has not started!</div>
+          )}
           {data.history.map(result => {
             let team_a_score = result.team_a_score;
             let team_h_score = result.team_h_score;
@@ -52,7 +52,9 @@ export default function TeamPageSingleFixtures({ data, teams }) {
           <h3 className="block-header__title">Season Fixtures</h3>
         </div>
         <div className="content">
-          {data.fixtures.length === 0 && <div className="data-not-found">The season finished!</div>}
+          {data.fixtures.length === 0 && (
+            <div className="data-not-found">The season finished!</div>
+          )}
           {data.fixtures.map(fixture => {
             let isHome = fixture.was_home;
             let key = fixture.kickoff_time_formatted;

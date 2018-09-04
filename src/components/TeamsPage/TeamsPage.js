@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
 import Loader from "../Loader/Loader";
-import TeamsTable from "../TeamsTable/TeamsTable"
+import TeamsTable from "../TeamsTable/TeamsTable";
 //import "./NotFound.css";
 
 class TeamsPage extends Component {
@@ -16,12 +16,9 @@ class TeamsPage extends Component {
       return <Loader />;
     }
 
-    const { teams } = this.props
-    console.log(teams)
+    const { teams } = this.props;
 
-    return (
-      <TeamsTable teams={teams} />
-    );
+    return <TeamsTable teams={teams} />;
   }
 }
 
@@ -30,7 +27,7 @@ const mapStateToProps = (state, ownProps) => {
     all_data: state.response,
     teams: state.response ? state.response.teams : null,
     error: state.error,
-    view: state.view,
+    view: state.view
   };
 };
 

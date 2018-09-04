@@ -1,63 +1,62 @@
 .player-row:nth-child(even) {
-    background-color: #373a4e;
+  background-color: #373a4e;
 }
 
 .player-row {
-    text-align: center;
-    color: white;
-    display: flex;
-    width: 100%;
-    padding: 10px 0px;
+  text-align: center;
+  color: white;
+  display: flex;
+  width: 100%;
+  padding: 10px 0px;
 }
 
 .player-row:hover {
-    background-color: #474b64;
+  background-color: #474b64;
 }
 
 .player-row__team {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-.player-row__full-name{
-    text-align: center;
-    flex: 0 0 30%;
+.player-row__full-name {
+  text-align: center;
+  flex: 0 0 30%;
 }
 
 .player-row__stats {
-    text-align: center;
-    flex: 0 0 7%;
+  text-align: center;
+  flex: 0 0 7%;
 }
 
-
 .player-row-head {
-    text-align: center;
-    color: white;
-    padding: 15px 0px !important;
-    margin: 10px 0px;
-    display: flex;
-    width: 100%;
-    background-color: #414358;
-    padding: 5px 0px;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 1px;
+  text-align: center;
+  color: white;
+  padding: 15px 0px !important;
+  margin: 10px 0px;
+  display: flex;
+  width: 100%;
+  background-color: #414358;
+  padding: 5px 0px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .player-row__button {
-    flex: 1 1 auto;
-    text-align: center;
+  flex: 1 1 auto;
+  text-align: center;
 }
 
 .player-info-button {
-    text-decoration: none;
-    background-color: #2196f3;
-    border-radius: 5px;
-    padding: 5px 15px;
-    color: white;
-    font-size: 12px;
+  text-decoration: none;
+  background-color: #2196f3;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+  font-size: 12px;
 }
 
 .player-fullname-link {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }

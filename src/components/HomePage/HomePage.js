@@ -8,7 +8,7 @@ import NextFixtures from "../NextFixtures/NextFixtures";
 import { Icon } from "react-icons-kit";
 import { starFull } from "react-icons-kit/icomoon/starFull";
 import { calendar } from "react-icons-kit/fa/calendar";
-import Loader from '../Loader/Loader'
+import Loader from "../Loader/Loader";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -16,21 +16,34 @@ class HomePage extends Component {
   }
   render() {
     if (!this.props.response) {
-      return <Loader />
+      return <Loader />;
     }
-    const { teams, next_event_fixtures, elements, element_types } = this.props.response;
+    const {
+      teams,
+      next_event_fixtures,
+      elements,
+      element_types
+    } = this.props.response;
     return (
       <div className="Home">
         <div className="column">
           <div className="block">
             <div className="block-header">
               <h3 className="block-header__title">
-                <Icon size={"24px"} icon={starFull} className="home-page__icon" />
+                <Icon
+                  size={"24px"}
+                  icon={starFull}
+                  className="home-page__icon"
+                />
                 Dream Team
               </h3>
             </div>
             <div className="content">
-              <DreamTeam players={elements} positions={element_types} teams={teams} />
+              <DreamTeam
+                players={elements}
+                positions={element_types}
+                teams={teams}
+              />
             </div>
           </div>
         </div>
@@ -38,7 +51,11 @@ class HomePage extends Component {
           <div className="block">
             <div className="block-header">
               <h3 className="block-header__title">
-                <Icon size={"24px"} icon={calendar} className="home-page__icon" />
+                <Icon
+                  size={"24px"}
+                  icon={calendar}
+                  className="home-page__icon"
+                />
                 Next Fixtures
               </h3>
             </div>

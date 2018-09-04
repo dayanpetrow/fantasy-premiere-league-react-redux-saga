@@ -2,7 +2,12 @@ import React from "react";
 import "./PlayersTable.css";
 import PlayersTableRow from "../PlayersTableRow/PlayersTableRow";
 
-export default function PlayersTable({ data, positions, teams, results_count }) {
+export default function PlayersTable({
+  data,
+  positions,
+  teams,
+  results_count
+}) {
   return (
     <div className="column">
       <div className="block">
@@ -19,7 +24,11 @@ export default function PlayersTable({ data, positions, teams, results_count }) 
             <div className="player-row__stats">CS</div>
             <div className="player-row__button">More...</div>
           </div>
-          {data.length === 0 && <div className="data-not-found">Ooops, no players match the criteria!</div>}
+          {data.length === 0 && (
+            <div className="data-not-found">
+              Ooops, no players match the criteria!
+            </div>
+          )}
           {data.slice(0, results_count).map(player => {
             let position =
               positions[player.element_type - 1].singular_name_short;
@@ -33,7 +42,6 @@ export default function PlayersTable({ data, positions, teams, results_count }) 
               />
             );
           })}
-          
         </div>
       </div>
     </div>
