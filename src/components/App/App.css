@@ -28,3 +28,79 @@ html, body {
   padding: 20px;
   color: white;
 }
+
+/* FLEXBOX TABLE STYLE */
+.flexbox-table__content-title {
+  text-align: left;
+  padding: 0px 20px;
+}
+
+.flexbox-table__content-title > h3 {
+  font-size: 16px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.flexbox-table__col-7 {
+  text-align: center;
+  flex: 0 0 7%;
+}
+
+.flexbox-table__col-10 {
+  text-align: center;
+  flex: 0 0 10%;
+}
+
+.flexbox-table__col-13 {
+  text-align: center;
+  flex: 0 0 13%;
+}
+
+.flexbox-table__col-17 {
+  text-align: center;
+  flex: 0 0 17%;
+}
+
+.flexbox-table__col-25 {
+  text-align: center;
+  flex: 0 0 25%;
+}
+
+.flexbox-table__col-40 {
+  text-align: center;
+  flex: 0 0 40%;
+}
+
+.flexbox-table__col-fill {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.flexbox-table__head {
+  text-align: center;
+  color: white;
+  padding: 15px 0px !important;
+  margin: 10px 0px;
+  display: flex;
+  width: 100%;
+  background-color: #414358;
+  padding: 5px 0px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.flexbox-table__row {
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.flexbox-table__row:nth-child(even) {
+  background-color: #373a4e;
+}
+
+.flexbox-table__row:hover {
+  background-color: #474b64;
+}

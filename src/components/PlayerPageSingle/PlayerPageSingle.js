@@ -46,7 +46,7 @@ class PlayerPageSingle extends Component {
 
     return (
       <div className="PlayerPageSingle">
-        <h1 className="player-page-single__name">
+        <h1 className="PlayerPageSingle__name">
           {player_full_name} ({player_team_name})
         </h1>
         <div className="difficulty-colored-line">
@@ -56,7 +56,7 @@ class PlayerPageSingle extends Component {
             <Loader />
           )}
         </div>
-        <div className="player-page-single-content">
+        <div className="PlayerPageSingle__content">
           <div className="column column-left">
             <PlayerPageSingleOverall
               data={player_fpl_stats}

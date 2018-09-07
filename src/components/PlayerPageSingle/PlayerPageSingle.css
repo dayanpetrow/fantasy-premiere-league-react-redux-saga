@@ -1,24 +1,24 @@
-.player-page-single__name {
+.PlayerPageSingle__name {
   text-align: center;
   color: white;
   letter-spacing: 2px;
 }
 
-.player-page-single-content {
+.PlayerPageSingle__content {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
 
-.player-page-single-content > .column {
+.PlayerPageSingle__content > .column {
   padding: 20px;
 }
 
-.player-page-single-content > .column-right {
+.PlayerPageSingle__content > .column-right {
   flex: 2.1 0 0;
 }
 
-.player-page-single-content > .column-left {
+.PlayerPageSingle__content > .column-left {
   flex: 0.9 0 0;
 }
 
@@ -90,75 +90,29 @@
   padding-top: 0px;
 }
 
-.player-page-single__content-title {
-  text-align: left;
-  padding: 0px 20px;
+span[class^="player-fixture-difficulty-"] {
+    opacity: 1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
 }
 
-.player-page-single__content-title > h3 {
-  font-size: 16px;
-  color: white;
-  letter-spacing: 1px;
+.player-fixture-difficulty-1 {
+    background-color: rgba(148,255,50, 0.8);
 }
 
-.player-page-single__col-17 {
-  text-align: center;
-  flex: 0 0 17%;
+.player-fixture-difficulty-2 {
+    background-color: rgba(110,187,37,0.8);
 }
 
-.player-page-single__col-7 {
-  text-align: center;
-  flex: 0 0 7%;
+.player-fixture-difficulty-3 {
+    background-color: rgba(180,148,6,0.8);
 }
 
-.player-page-single__col-10 {
-  text-align: center;
-  flex: 0 0 10%;
+.player-fixture-difficulty-4 {
+    background-color: rgba(199,63,0,0.8);
 }
 
-.player-page-single__col-13 {
-  text-align: center;
-  flex: 0 0 13%;
-}
-
-.player-page-single__col-fill {
-  flex: 1 1 auto;
-  text-align: center;
-}
-
-.player-page-single_head {
-  text-align: center;
-  color: white;
-  padding: 15px 0px !important;
-  margin: 10px 0px;
-  display: flex;
-  width: 100%;
-  background-color: #414358;
-  padding: 5px 0px;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.player-page-single-results-row {
-  text-align: center;
-  color: white;
-  display: flex;
-  width: 100%;
-  padding: 10px 0px;
-}
-
-.player-page-single-results-row {
-  text-align: center;
-  color: white;
-  padding: 10px 0px;
-  display: flex;
-}
-
-.player-page-single-results-row:nth-child(even) {
-  background-color: #373a4e;
-}
-
-.player-page-single-results-row:hover {
-  background-color: #474b64;
+.player-fixture-difficulty-5 {
+    background-color: rgba(214,0,0,0.8);
 }
