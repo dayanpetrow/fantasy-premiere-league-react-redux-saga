@@ -1,0 +1,2 @@
+export const HISTORY_TAB = 'HISTORY_TAB'
+export const FIXTURES_TAB = 'FIXTURES_TAB'

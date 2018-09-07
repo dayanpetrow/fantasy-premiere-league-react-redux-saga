@@ -1,159 +1,158 @@
 .team-page-content {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .team-page-content > .column {
-    padding: 20px;
+  padding: 20px;
 }
 
 .team-page-content > .column-left {
-    flex: 1.9 0 0;
-    width: 60%;
+  flex: 1.9 0 0;
+  width: 60%;
 }
 
 .team-page-content > .column-right {
-    flex: 1.1 0 0;
-    width: 30%;
+  flex: 1.1 0 0;
+  width: 30%;
 }
 
 .block-header {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #41435a;
-    color: white;
-    letter-spacing: 2px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #41435a;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .block-header__title {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .block {
-    background-color: #2f3243;
-    box-shadow: 0px 0px 10px #1d1e27;
-    margin-bottom: 20px;
+  background-color: #2f3243;
+  box-shadow: 0px 0px 10px #1d1e27;
+  margin-bottom: 20px;
 }
 
 .content {
-    padding: 20px;
+  padding: 20px;
 }
 
-
 .team-name-title {
-    color: white;
-    text-align: center;
-    letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .difficulty-colored-line {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .result-row {
-    text-align: center;
-    color: white;
-    padding: 10px 0px;
-    display: flex;
-  }
-  
-  .result-row:nth-child(even) {
-    background-color: #373a4e;
-  }
-  
-  .result-row:hover {
-    background-color: #474b64;
-  }
-  
-  .result-row__time {
-    text-align: right;
-    flex: 1;
-    width: 44%;
-  }
-  
-  .result-row__team-right {
-    text-align: left;
-    flex: 1;
-    width: 44%;
-  }
-  
-  .result-row__result {
-    text-align: center;
-    flex: 1;
-    width: 12%;
-  }
-  
-  .result-row__result__text {
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+}
 
-  .result-row__result__text.draw {
-    background-color: #c3c3c3;
-  }
+.result-row:nth-child(even) {
+  background-color: #373a4e;
+}
 
-  .result-row__result__text.loss {
-    background-color: #fd4848;
-  }
+.result-row:hover {
+  background-color: #474b64;
+}
 
-  .result-row__result__text.win {
-    background-color: #5dc123;
-  }
+.result-row__time {
+  text-align: right;
+  flex: 1;
+  width: 44%;
+}
 
-  .team-fixture-row {
-    text-align: center;
-    justify-content: center;
-    color: white;
-    padding: 10px 0px;
-    display: flex;
-  }
-  
-  .team-fixture-row:nth-child(even) {
-    background-color: #373a4e;
-  }
-  
-  .team-fixture-row:hover {
-    background-color: #474b64;
-  }
-  
-  .team-fixture-row__time {
-    text-align: right;
-    flex: 1;
-    width: 44%;
-    font-size: 14px;
-  }
-  
-  .team-fixture-row__team-right {
-    text-align: left;
-    flex: 1;
-    width: 44%;
-  }
-  
-  .team-fixture-row__time {
-    text-align: center;
-    flex: 1;
-    width: 12%;
-  }
-  
-  .team-fixture-row__time__text {
-    background-color: #414358;
-    font-size: 12px;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .team-fixture-box {
-      padding: 13px;
-  }
+.result-row__team-right {
+  text-align: left;
+  flex: 1;
+  width: 44%;
+}
 
-  .player-row__stats-team-page {
-    text-align: center;
-    flex: 0 0 13%;
+.result-row__result {
+  text-align: center;
+  flex: 1;
+  width: 12%;
+}
+
+.result-row__result__text {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.result-row__result__text.draw {
+  background-color: #c3c3c3;
+}
+
+.result-row__result__text.loss {
+  background-color: #fd4848;
+}
+
+.result-row__result__text.win {
+  background-color: #5dc123;
+}
+
+.team-fixture-row {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.team-fixture-row:nth-child(even) {
+  background-color: #373a4e;
+}
+
+.team-fixture-row:hover {
+  background-color: #474b64;
+}
+
+.team-fixture-row__time {
+  text-align: right;
+  flex: 1;
+  width: 44%;
+  font-size: 14px;
+}
+
+.team-fixture-row__team-right {
+  text-align: left;
+  flex: 1;
+  width: 44%;
+}
+
+.team-fixture-row__time {
+  text-align: center;
+  flex: 1;
+  width: 12%;
+}
+
+.team-fixture-row__time__text {
+  background-color: #414358;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.team-fixture-box {
+  padding: 13px;
+}
+
+.player-row__stats-team-page {
+  text-align: center;
+  flex: 0 0 13%;
 }
