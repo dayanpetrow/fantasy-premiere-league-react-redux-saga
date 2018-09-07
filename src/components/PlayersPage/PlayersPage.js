@@ -86,15 +86,24 @@ class PlayersPage extends Component {
 
   handlePositionChange = selectedOption => {
     const { selectedSort, findPlayerText } = this.state;
-    const sorted_players = this.props.response.elements.sort((a, b) => b[selectedSort.value] - a[selectedSort.value])
-    const players = selectedOption.value === 5 ?  sorted_players : sorted_players.filter(player => player.element_type === selectedOption.value)
+    const sorted_players = this.props.response.elements.sort(
+      (a, b) => b[selectedSort.value] - a[selectedSort.value]
+    );
+    const players =
+      selectedOption.value === 5
+        ? sorted_players
+        : sorted_players.filter(
+            player => player.element_type === selectedOption.value
+          );
     this.setState(function(state) {
       return {
         ...state,
         selectedPosition: selectedOption,
         results_count: 12,
         players: players,
-        search_results: players.filter(player => playersPageFilterByName(player, findPlayerText))
+        search_results: players.filter(player =>
+          playersPageFilterByName(player, findPlayerText)
+        )
       };
     });
   };

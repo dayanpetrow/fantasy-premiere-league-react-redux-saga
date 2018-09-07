@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { getPriceChangeArrow } from "../ConditionalJSX";
 import * as tabs from "../../constants/tabs";
 
 export default function PlayersPageSingleStats({
@@ -17,7 +15,7 @@ export default function PlayersPageSingleStats({
             "History"
           ) : (
             <a
-              href="javascript:void()"
+              href=""
               onClick={e => switchTab(e, tabs.HISTORY_TAB)}
               className="tab-link"
             >
@@ -29,7 +27,7 @@ export default function PlayersPageSingleStats({
             "Fixtures"
           ) : (
             <a
-              href="javascript:void()"
+              href=""
               onClick={e => switchTab(e, tabs.FIXTURES_TAB)}
               className="tab-link"
             >
@@ -120,7 +118,7 @@ export default function PlayersPageSingleStats({
                 <div className="flexbox-table__col-7">Minutes</div>
                 <div className="flexbox-table__col-7">Goals</div>
                 <div className="flexbox-table__col-7">Assists</div>
-                <div className="flexbox-table__col-7">Y/C</div>
+                <div className="flexbox-table__col-7">Y/R</div>
                 <div className="flexbox-table__col-7">CS</div>
                 <div className="flexbox-table__col-7">I</div>
                 <div className="flexbox-table__col-7">C</div>

@@ -8,11 +8,12 @@ import TeamPageSinglePlayers from "./TeamPageSinglePlayers";
 import TeamPageSingleFixtures from "./TeamPageSingleFixtures";
 import DifficultyLine from "../common/DifficultyLine/DifficultyLine";
 
-//for testing with no fixtures or past games
+/* for testing with no fixtures or past games
 const myobj = {
   fixtures: [],
   history: []
 };
+*/
 
 class TeamPageSingle extends Component {
   constructor(props) {

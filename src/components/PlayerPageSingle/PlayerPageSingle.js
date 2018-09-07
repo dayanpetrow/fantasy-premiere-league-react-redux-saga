@@ -37,8 +37,6 @@ class PlayerPageSingle extends Component {
       player_fpl_stats.first_name + " " + player_fpl_stats.second_name;
     const player_team_name = all_data.teams[player_fpl_stats.team - 1].name;
 
-    let price = (player_fpl_stats.now_cost * 0.1).toFixed(1);
-    let price_change = player_fpl_stats.cost_change_start;
     let player_position =
       all_data.element_types[player_fpl_stats.element_type - 1].singular_name;
 

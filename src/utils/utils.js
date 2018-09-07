@@ -7,6 +7,7 @@ export function playersPageFilterByName(player, do_query) {
       .replace(" ", "")
       .startsWith(do_query) ||
     player["first_name"].toLowerCase().startsWith(do_query) ||
+    player["web_name"].toLowerCase().startsWith(do_query) ||
     player["second_name"].toLowerCase().startsWith(do_query)
   );
 }

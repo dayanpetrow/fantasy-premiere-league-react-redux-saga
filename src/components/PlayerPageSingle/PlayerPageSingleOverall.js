@@ -18,7 +18,8 @@ export default function PlayerPageSingleOverall({ data, position }) {
         )}
         <div className="overall-data-picture">
           <div className="picture">
-            <img src={`https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/110x140/p${photo}.png`} />
+            <img src={`https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/110x140/p${photo}.png`} 
+              alt={`${data.first_name} ${data.second_name}`} />
             <div>Squad number: {data.squad_number} ({position})</div>
           </div>
         </div>

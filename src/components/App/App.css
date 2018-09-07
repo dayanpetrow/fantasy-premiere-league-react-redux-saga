@@ -61,6 +61,11 @@ html, body {
   flex: 0 0 17%;
 }
 
+.flexbox-table__col-20 {
+  text-align: center;
+  flex: 0 0 20%;
+}
+
 .flexbox-table__col-25 {
   text-align: center;
   flex: 0 0 25%;
