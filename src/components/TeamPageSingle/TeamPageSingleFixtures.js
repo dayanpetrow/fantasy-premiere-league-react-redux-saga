@@ -1,5 +1,5 @@
 import React from "react";
-import "./TeamPageSingleFixtures.css";
+import "./TeamPageSingle.css";
 import { Link } from "react-router-dom";
 import { getResultOutcomeClass } from "../ConditionalJSX";
 

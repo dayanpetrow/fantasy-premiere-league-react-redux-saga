@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import { connect } from "react-redux";
-import * as actions from "../../actions/actions";
+import * as actions from "../../../actions/actions";
 import { Icon } from "react-icons-kit";
 import { home } from "react-icons-kit/icomoon/home";
 import { addressBook } from "react-icons-kit/icomoon/addressBook";

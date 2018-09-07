@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Navigation from "../Nav/Navigation";
+import Navigation from "../common/Nav/Navigation";
 import HomePage from "../HomePage/HomePage";
 import PlayersPage from "../PlayersPage/PlayersPage";
-import Footer from "../Footer/Footer";
-import NotFound from "../NotFound/NotFound";
+import Footer from "../common/Footer/Footer";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import PlayerPageSingle from "../PlayerPageSingle/PlayerPageSingle";
 import TeamsPage from "../TeamsPage/TeamsPage";
 import TeamPageSingle from "../TeamPageSingle/TeamPageSingle";
@@ -28,11 +28,9 @@ export default class App extends Component {
             <Route
               exact
               path="/teams/:teamId"
-              component={props => (
-                <TeamPageSingle timestamp={new Date().toString()} {...props} />
-              )}
+              component={TeamPageSingle}
             />
-            <Route path="*" component={NotFound} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </div>
         <Footer />

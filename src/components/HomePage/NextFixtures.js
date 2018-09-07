@@ -1,5 +1,5 @@
 import React from "react";
-import "./NextFixtures.css";
+import "./HomePage.css";
 import { Link } from "react-router-dom";
 
 export default function NextFixtures({ fixtures, teams }) {

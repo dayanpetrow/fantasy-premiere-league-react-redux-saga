@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
-import Loader from "../Loader/Loader";
-import TeamsTable from "../TeamsTable/TeamsTable";
+import Loader from "../common/Loader/Loader";
+import TeamsTable from "./TeamsTable";
 //import "./NotFound.css";
 
 class TeamsPage extends Component {

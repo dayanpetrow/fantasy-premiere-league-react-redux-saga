@@ -1,0 +1,85 @@
+.player-page-single__name {
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.player-page-single-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.player-page-single-content > .column {
+  padding: 20px;
+}
+
+.player-page-single-content > .column-left {
+  flex: 2 0 0;
+  width: 60%;
+}
+
+.player-page-single-content > .column-right {
+  flex: 1 0 0;
+  width: 30%;
+}
+
+.overall-data-news {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(139, 108, 49);
+  color: white;
+  margin-bottom: 10px;
+}
+
+.overall-data-row {
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.overall-data-row:nth-child(even) {
+  background-color: #373a4e;
+}
+
+.overall-data-row:hover {
+  background-color: #474b64;
+}
+
+.overall-data-row__label {
+  text-align: right;
+  flex: 1;
+  width: 45%;
+  padding: 0px 10px;
+}
+
+.overall-data-row__value {
+  text-align: left;
+  flex: 1;
+  width: 45%;
+  padding: 0px 10px;
+}
+
+.overall-data-picture {
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.overall-data-picture > .picture {
+  flex: 1;
+  justify-content: center;
+}
+
+.overall-data-picture > .picture > img {
+    height: 200px;
+  }
+
+.overall-data-picture > .player-info {
+  flex: 1;
+}
+
+

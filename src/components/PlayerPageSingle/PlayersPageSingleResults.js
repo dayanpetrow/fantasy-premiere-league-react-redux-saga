@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./TeamPageSinglePlayers.css";
 import { getPriceChangeArrow } from "../ConditionalJSX";
 
-export default function TeamPageSinglePlayers({ players, position }) {
+export default function PlayersPageSingleResults() {
   return (
     <div className="block">
       <div className="block-header">
-        <h3 className="block-header__title">{position}</h3>
+        <h3 className="block-header__title">Results</h3>
       </div>
       <div className="content">
         <div className="striped-dt">
@@ -19,7 +18,8 @@ export default function TeamPageSinglePlayers({ players, position }) {
             <div className="player-row__stats-team-page">Minutes</div>
             <div className="player-row__button">More...</div>
           </div>
-          {players
+          dasdasdas
+          {/* {players
             .sort((a, b) => b.total_points - a.total_points)
             .map(player => {
               let full_name = `${player.first_name} ${player.second_name}`;
@@ -56,7 +56,7 @@ export default function TeamPageSinglePlayers({ players, position }) {
                   </div>
                 </div>
               );
-            })}
+            })} */}
         </div>
       </div>
     </div>

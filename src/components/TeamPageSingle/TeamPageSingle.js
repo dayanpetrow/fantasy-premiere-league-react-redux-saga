@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
-import Loader from "../Loader/Loader";
+import Loader from "../common/Loader/Loader";
 import "./TeamPageSingle.css";
-import TeamPageSinglePlayers from "../TeamPageSinglePlayers/TeamPageSinglePlayers";
-import TeamPageSingleFixtures from "../TeamPageSingleFixtures/TeamPageSingleFixtures";
-import DifficultyLine from "../DifficultyLine/DifficultyLine";
+import TeamPageSinglePlayers from "./TeamPageSinglePlayers";
+import TeamPageSingleFixtures from "./TeamPageSingleFixtures";
+import DifficultyLine from "../common/DifficultyLine/DifficultyLine";
 
 //for testing with no fixtures or past games
 const myobj = {
@@ -32,7 +32,10 @@ class TeamPageSingle extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (!this.state.fixtures_loaded && this.props.team_players) {
+    if (
+      (!this.state.fixtures_loaded && this.props.team_players) ||
+      prevProps.match.params.teamId !== this.props.match.params.teamId
+    ) {
       this.props.fetchPlayer(this.props.team_players[0].id);
       this.setState({ fixtures_loaded: true });
     }

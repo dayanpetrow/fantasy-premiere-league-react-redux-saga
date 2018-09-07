@@ -5,8 +5,6 @@ import * as urls from "../../constants/urls";
 import Loader from "../common/Loader/Loader";
 import DifficultyLine from '../common/DifficultyLine/DifficultyLine'
 import "./PlayerPageSingle.css";
-import PlayersPageSingleResults from './PlayersPageSingleResults'
-import PlayerPageSingleOverall from './PlayerPageSingleOverall'
 
 
 class PlayerPageSingle extends Component {
@@ -25,11 +23,7 @@ class PlayerPageSingle extends Component {
     const player_full_name = player_fpl_stats.first_name + " " + player_fpl_stats.second_name
     const player_team_name = all_data.teams[player_fpl_stats.team-1].name
 
-    let price = (player_fpl_stats.now_cost * 0.1).toFixed(1);
-    let price_change = player_fpl_stats.cost_change_start;
-    let player_position = all_data.element_types[player_fpl_stats.element_type-1].singular_name
-
-    console.log(player_fpl_stats, player_history)
+    console.log(player_fpl_stats)
 
     return (
       <div className="PlayerPageSingle">
@@ -41,12 +35,12 @@ class PlayerPageSingle extends Component {
             <Loader />
           )}
         </div>
-        <div className="player-page-single-content">
+        <div className="team-page-content">
           <div className="column column-left">
             dasdasd
           </div>
           <div className="column column-right">
-            <PlayerPageSingleOverall data={player_fpl_stats} position={player_position} />
+            dasdasdasdsadsa
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import "./PlayersTable.css";
-import PlayersTableRow from "../PlayersTableRow/PlayersTableRow";
+import "./PlayersPage.css";
+import PlayersTableRow from "./PlayersTableRow";
 
 export default function PlayersTable({
   data,

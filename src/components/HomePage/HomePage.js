@@ -3,12 +3,12 @@ import "./HomePage.css";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
-import DreamTeam from "../DreamTeam/DreamTeam";
-import NextFixtures from "../NextFixtures/NextFixtures";
+import DreamTeam from "./DreamTeam";
+import NextFixtures from "./NextFixtures";
 import { Icon } from "react-icons-kit";
 import { starFull } from "react-icons-kit/icomoon/starFull";
 import { calendar } from "react-icons-kit/fa/calendar";
-import Loader from "../Loader/Loader";
+import Loader from "../common/Loader/Loader";
 
 class HomePage extends Component {
   componentDidMount() {

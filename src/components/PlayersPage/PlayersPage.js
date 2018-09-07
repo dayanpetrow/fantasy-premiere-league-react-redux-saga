@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import * as urls from "../../constants/urls";
-import Loader from "../Loader/Loader";
-import PlayersTable from "../PlayersTable/PlayersTable";
+import Loader from "../common/Loader/Loader";
+import PlayersTable from "./PlayersTable";
 import Select from "react-select";
 import "./PlayersPage.css";
 import { androidAdd } from "react-icons-kit/ionicons/androidAdd";
@@ -86,18 +86,15 @@ class PlayersPage extends Component {
 
   handlePositionChange = selectedOption => {
     const { selectedSort, findPlayerText } = this.state;
+    const sorted_players = this.props.response.elements.sort((a, b) => b[selectedSort.value] - a[selectedSort.value])
+    const players = selectedOption.value === 5 ?  sorted_players : sorted_players.filter(player => player.element_type === selectedOption.value)
     this.setState(function(state) {
       return {
         ...state,
         selectedPosition: selectedOption,
         results_count: 12,
-        players: this.props.response.elements
-          .filter(player => player.element_type === selectedOption.value)
-          .sort((a, b) => b[selectedSort.value] - a[selectedSort.value]),
-        search_results: this.props.response.elements
-          .filter(player => player.element_type === selectedOption.value)
-          .sort((a, b) => b[selectedSort.value] - a[selectedSort.value])
-          .filter(player => playersPageFilterByName(player, findPlayerText))
+        players: players,
+        search_results: players.filter(player => playersPageFilterByName(player, findPlayerText))
       };
     });
   };
@@ -122,7 +119,6 @@ class PlayersPage extends Component {
       });
 
       position_options = [{ label: "All", value: 5 }, ...position_options];
-      sort_options = [{ label: "Options", value: null }, ...sort_options];
 
       return {
         players: nextProps.response.elements.sort(

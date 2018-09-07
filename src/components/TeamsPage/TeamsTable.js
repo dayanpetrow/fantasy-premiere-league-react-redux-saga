@@ -1,5 +1,5 @@
 import React from "react";
-import "./TeamsTable.css";
+import "./TeamsPage.css";
 import { Link } from "react-router-dom";
 
 export default function TeamsTable({ teams }) {
